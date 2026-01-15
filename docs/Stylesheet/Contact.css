@@ -1,0 +1,299 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background:
+    url(/Images/background.png),
+    radial-gradient(circle at top right, hsl(0, 0%, 47%), hsl(0, 0%, 9%) 60%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  /* Covers the full viewport height */
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  width: 100%;
+  padding: 16px 5%;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
+  backdrop-filter: blur(15px);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+.navbar {
+  display: flex;
+  gap: 32px;
+  margin-right: 30px;
+  list-style-type: none;
+}
+
+.navbar li a {
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navbar li a:hover {
+  text-shadow: 0 0 10px hsl(350, 100%, 88%);
+  cursor: pointer;
+  color: hsl(350, 100%, 88%);
+}
+
+.cart-icon {
+  position: relative;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 15px 20px;
+}
+
+.cart-icon .cart-item-count {
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  width: 20px;
+  height: 15px;
+  background: tomato;
+  border-radius: 50%;
+  font-size: 12px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.cart-icon:hover {
+  background: hsl(350, 100%, 88%);
+}
+
+.cart-icon:active {
+  background-color: hsl(350, 42%, 75%);
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: auto;
+  font-size: 1.8rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
+.logo a:hover {
+  text-shadow: 0 0 10px hsl(350, 100%, 88%);
+  cursor: pointer;
+  color: hsl(350, 100%, 88%);
+}
+
+#cupcake-logo {
+  width: 100px;
+  border-radius: 100px;
+  padding: 10px;
+}
+
+.menubar {
+  margin-left: 10px;
+  display: none;
+}
+
+/* To make the navigation bar responsive*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  padding: 25px 20px;
+  z-index: 999;
+  /* To make the side bar above everything else */
+  background-color: hsla(0, 0%, 100%, 0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+
+  display: none;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar-navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.sidebar-navbar li a {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+.sidebar-navbar a:hover {
+  background: hsl(350, 100%, 88%);
+  color: black;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  /* Sticky footer */
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin: 80px auto;
+  border: 1px solid #333;
+}
+
+.glass-container i {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.glass-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.glass-container h3 {
+  color: hsl(350, 100%, 88%);
+  font-size: 1.2rem;
+}
+
+.glass-container p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.facebook-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.glass-container a:hover {
+  text-shadow: 0 0 10px hsl(350, 100%, 88%);
+  cursor: pointer;
+  color: hsl(350, 100%, 88%);
+}
+
+.glass-container {
+  min-height: 320px;
+  padding: 60px 30px;
+  overflow: auto;
+  background-color: hsla(0, 0%, 100%, 0.178);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid hsla(0, 0%, 100%, 0.4);
+  border-left: 1px solid hsla(0, 0%, 100%, 0.3);
+  box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.089);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  padding: 16px 5%;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
+  backdrop-filter: blur(15px);
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+.scroll-to-top {
+  font-size: 50px;
+  padding: 7px;
+  margin-right: auto;
+
+  text-decoration: none;
+  color: white
+}
+
+.scroll-to-top a {
+  color: hsl(0, 0%, 100%);
+}
+
+.scroll-to-top:hover {
+  text-shadow: 0 0 10px hsl(350, 100%, 88%);
+  cursor: pointer;
+  color: hsl(350, 100%, 88%);
+}
+
+.scroll-to-top:active {
+  text-shadow: 0 0 10px hsl(350, 33%, 71%);
+}
+
+.container {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.footer-content {
+  width: 190px;
+  margin: 0px auto 0px;
+  padding: 7px;
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-content a:hover {
+  text-shadow: 0 0 10px hsl(350, 100%, 88%);
+  cursor: pointer;
+  color: hsl(350, 100%, 88%);
+}
+
+@media(max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menubar {
+    display: block;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}
