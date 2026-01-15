@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cakes by Khame</title>
+	<link rel="icon" type="image/jpg" href="Icon/Cupcake_icon.jpg" id="favicon">
+	<link rel="stylesheet" href="Stylesheet/Home.css">
+	<script src="https://kit.fontawesome.com/8ddf81994c.js" crossorigin="anonymous"></script>
+	<script>
+		if (localStorage.getItem("loggedIn") !== "true") {
+			window.location.href = "Login.html";
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<img src="Images/Cupcake_logo.jpg" id="cupcake-logo">
+			<div class="logo"><a href="index.html">Cakes by Khame</a></div>
+			<ul class="navbar">
+				<li class="hideOnMobile"><a href="index.html">Home</a></li>
+				<li class="hideOnMobile"><a href="Navigation/About.html">About</a></li>
+				<li class="hideOnMobile"><a href="Navigation/Shop.html">Shop</a></li>
+				<li class="hideOnMobile"><a href="Navigation/Contact.html">Contact</a></li>
+			</ul>
+
+			<div class="cart-icon">
+				<i class="fa-solid fa-cart-shopping"></i>
+				<span class="cart-item-count"></span>
+			</div>
+
+			<div class="menubar">
+				<i class="fa-solid fa-bars" onclick=showSidebar()></i>
+			</div>
+		</nav>
+
+		<div class="sidebar">
+			<div class="sidebar-exit"><i class="fa-solid fa-x" onclick=hideSidebar()></i></div>
+			<ul class="sidebar-navbar">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Navigation/About.html">About</a></li>
+				<li><a href="Navigation/Shop.html">Shop</a></li>
+				<li><a href="Navigation/Contact.html">Contact</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<main>
+		<div class="glass-container">
+			<h1>Welcome to Cakes by Khame!</h1>
+			<br>
+			<p style="font-size: 1.5rem;">
+				Be the first to know about our new release cake, promotions, and events. Join our page to stay connected
+				with Khame's community.
+			</p>
+
+			<div class="emote">
+				<i class="fa-solid fa-heart"></i>
+				<i class="fa-solid fa-cake-candles"></i>
+				<i class="fa-regular fa-face-grin-stars"></i>
+			</div>
+		</div>
+
+		<div class="cards">
+			<div class="card"><img src="Images/Cream_puff.jpg" alt="This is a cream puff"></div>
+			<div class="card"><img src="Images/cat_cake.jpg" alt="This is cat themed cake"></div>
+			<div class="card"><img src="Images/cupcake.jpg" alt="This is an assorted cupcake"></div>
+		</div>
+
+		<div class="glass-container2"><br>
+			<h1>"Mix, Bake, Create.. Love it!"</h1>
+			<br>
+			<h2>#From Our Kitchen to Your Feed</h2>
+			<br>
+			<button class="facebook_btn"><a href="https://www.facebook.com/profile.php?id=100063966704725"
+					target="_blank"><i class="fa-brands fa-facebook" ;></i></a></button>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+			<div class="scroll-to-top">
+				<a href="#"><i class="fa-solid fa-arrow-up"></i></a>
+			</div>
+
+			<div class="footer-content">
+				<h3>Contact Us</h3>
+				<p><a href="gmailto:cakesbykhame@gmail.com">cakesbykhame@gmail.com</a></p>
+			</div>
+
+			<div class="footer-content">
+				<h3>Follow Us</h3>
+				<p><a href="https://www.facebook.com/profile.php?id=100063966704725" target="_blank">Facebook</a></p>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		function showSidebar() {
+			const sidebar = document.querySelector('.sidebar')
+			sidebar.style.display = 'flex'
+		}
+		function hideSidebar() {
+			const sidebar = document.querySelector('.sidebar')
+			sidebar.style.display = 'none'
+		}
+	</script>
+</body>
+
+</html>

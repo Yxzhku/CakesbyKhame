@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cakes by Khame</title>
+	<link rel="icon" type="image/jpg" href="../Icon/Cupcake_icon.jpg" id="favicon">
+	<link rel="stylesheet" href="../Stylesheet/Shop.css">
+	<script src="https://kit.fontawesome.com/8ddf81994c.js" crossorigin="anonymous"></script>
+	<script>
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "Login.html";
+        }
+    </script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<img src="../Images/Cupcake_logo.jpg" id="cupcake-logo">
+			<div class="logo"><a href="../index.html">Cakes by Khame</a></div>
+			<ul class="navbar">
+				<li class="hideOnMobile"><a href="../index.html">Home</a></li>
+				<li class="hideOnMobile"><a href="../Navigation/About.html">About</a></li>
+				<li class="hideOnMobile"><a href="../Navigation/Shop.html">Shop</a></li>
+				<li class="hideOnMobile"><a href="../Navigation/Contact.html">Contact</a></li>
+			</ul>
+			<div class="cart-icon">
+				<i class="fa-solid fa-cart-shopping"></i>
+				<span class="cart-item-count"></span>
+			</div>
+
+			<div class="menubar">
+				<i class="fa-solid fa-bars" onclick=showSidebar()></i>
+			</div>
+		</nav>
+
+		<div class="sidebar">
+			<div class="sidebar-exit"><i class="fa-solid fa-x" onclick=hideSidebar()></i></div>
+			<ul class="sidebar-navbar">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../Navigation/About.html">About</a></li>
+				<li><a href="../Navigation/Shop.html">Shop</a></li>
+				<li><a href="../Navigation/Contact.html">Contact</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<main>
+		<div class="cart">
+			<h2 class="cart-title">Your Cart</h2>
+			<div class="cart-content">
+				<!-- <div class="cart-box">
+					<img src="../Images/Product1-cake.jpg" class="cart-img">
+					<div class="cart-detail">
+						<h2 class="cart-product-title">Aquamarine Cake</h2>
+						<span class="cart-price">₱1,500</span>
+						<div class="cart-quantity">
+							<button id="decrement">-</button>
+							<span class="number">1</span>
+							<button id="increment">+</button>
+						</div>
+					</div>
+					<i class="fa-regular fa-trash-can cart-remove"></i>
+				</div> -->
+			</div>
+			<div class="total">
+				<div class="total-title">Total</div>
+				<div class="total-price">₱0</div>
+			</div>
+			<button class="btn-buy">Buy Now</button>
+			<i class="fa-solid fa-xmark" id="cart-close"></i>
+		</div>
+
+		<section class="shop">
+			<h1 class="section-title">Shop Products</h1>
+			<div class="shop-search">
+				<input type="text" id="searchInput" placeholder="Search cakes, cupcakes, pastries..."
+					onkeyup="filterProducts()" />
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</div>
+
+			<div class="product-content">
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product1-cake.jpg" alt="This is a aquamarine cake">
+					</div>
+					<h2 class="product-title">Aquamarine Cake</h2>
+					<div class="price-and-cart">
+						<span class="price">₱1,500</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product2-cake.jpg" alt="This is a Lightning McQueen cake">
+					</div>
+					<h2 class="product-title">Lightning McQueen Cake</h2>
+					<div class="price-and-cart">
+						<span class="price">₱2,500</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product3-cake.jpg" alt="This is a nerf gun cake">
+					</div>
+					<h2 class="product-title">Nerf Gun Cake</h2>
+					<div class="price-and-cart">
+						<span class="price">₱2,500</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product4-cake.jpg" alt="This is a cat themed cake">
+					</div>
+					<h2 class="product-title">Cat Cake</h2>
+					<div class="price-and-cart">
+						<span class="price">₱2,500</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product5-cake.jpg" alt="This is a boba milk tea cake">
+					</div>
+					<h2 class="product-title">Boba milk tea cake</h2>
+					<div class="price-and-cart">
+						<span class="price">₱1,500</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product1-cupcake.jpg" alt="This is a cinderella cupcake">
+					</div>
+					<h2 class="product-title">Cinderella Cupcakes</h2>
+					<div class="price-and-cart">
+						<span class="price">₱45 per piece</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product2-cupcake.jpg" alt="This is a among us cupcakes">
+					</div>
+					<h2 class="product-title">Among Us Cupcakes</h2>
+					<div class="price-and-cart">
+						<span class="price">₱50 per piece</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product3-cupcake.jpg" alt="This is a Galaxy Cupcakes">
+					</div>
+					<h2 class="product-title">Galaxy Cupcakes</h2>
+					<div class="price-and-cart">
+						<span class="price">₱50 per piece</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product4-cupcake.jpg" alt="This is a strawberry chocolate cupcake">
+					</div>
+					<h2 class="product-title">Strawberry chocolate Cupcake</h2>
+					<div class="price-and-cart">
+						<span class="price">₱45 per piece</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/Product5-cupcake.jpg" alt="This is an assorted cupcake">
+					</div>
+					<h2 class="product-title">Assorted Cupcake</h2>
+					<div class="price-and-cart">
+						<span class="price">₱50 per piece</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+
+				<div class="product-box">
+					<div class="img-box">
+						<img src="../Images/product1-pastry.jpg" alt="This is a cream puff">
+					</div>
+					<h2 class="product-title">Cream puff</h2>
+					<div class="price-and-cart">
+						<span class="price">₱100</span>
+						<i class="fa-solid fa-cart-shopping add-cart"></i>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<div class="scroll-to-top">
+				<a href="#"><i class="fa-solid fa-arrow-up"></i></a>
+			</div>
+
+			<div class="footer-content">
+				<h3>Contact Us</h3>
+				<p><a href="mailto:cakesbykhame@gmail.com">cakesbykhame@gmail.com</a></p>
+			</div>
+
+			<div class="footer-content">
+				<h3>Follow Us</h3>
+				<p><a href="https://www.facebook.com/profile.php?id=10006396670473h35" target="_blank">Facebook</a></p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="../Shop.js"></script>
+</body>
+
+</html>
